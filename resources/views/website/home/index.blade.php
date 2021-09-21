@@ -77,9 +77,9 @@
                 <ul class="list-unstyled d-flex footer-items">
                     <li><a href=""><i class="fa fa-facebook"> </i> facebook</a></li>
                     <li><a href=""><i class="fa fa-facebook"> </i> Github</a></li>
-                    <li><a href=""><i class="fa fa-facebook"> </i> Twitter</a></li>
+                    <li><a href=""><i class="fa fa-twitter"> </i> Twitter</a></li>
                     <li><a href=""><i class="fa fa-facebook"> </i> Send a mail</a></li>
-                    <li><a href=""><i class="fa fa-facebook"> </i> Call me</a></li>
+                    <li><a href=""><i class="fa fa-phone"> </i> Call me</a></li>
                 </ul>
                
             </div>
