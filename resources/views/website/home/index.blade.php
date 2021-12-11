@@ -1,4 +1,11 @@
 @extends('website.layout.main')
+@push('scopedCss')
+    <style>
+        .hidden {
+	display: none;
+}
+    </style>
+@endpush
 @section('content')
     <div class="section">
         <section id="hero-section">
@@ -70,20 +77,50 @@
                 </div>
             </div>
         </section>
+            <div class="animation-div"></div>
         <div class="work-together">
             <div class="work-content text-white">
                 <h2 class="font-weight-bold">Lets work together</h2>
                 <p>how do you take your coffee?</p>
-                <ul class="list-unstyled d-flex footer-items">
+                <ul class="list-unstyled d-lg-flex footer-items">
                     <li><a href=""><i class="fa fa-facebook"> </i> facebook</a></li>
-                    <li><a href=""><i class="fa fa-facebook"> </i> Github</a></li>
+                    <li><a href=""><i class="fa fa-github"> </i> Github</a></li>
                     <li><a href=""><i class="fa fa-twitter"> </i> Twitter</a></li>
-                    <li><a href=""><i class="fa fa-facebook"> </i> Send a mail</a></li>
-                    <li><a href=""><i class="fa fa-phone"> </i> Call me</a></li>
+                    <li><a href=""><i class="fa fa-envelope"> </i> Mail</a></li>
+                    <li><a href=""><i class="fa fa-phone"> </i>Call</a></li>
+                    <li><a href=""><i class="fa fa-linkedin"> </i> linkedin</a></li>
                 </ul>
                
             </div>
         </div>
-      
+        <button onclick="this.innerHTML=Date()">The time is?</button>   
+        <p></p>   
+    </div>
+    <div class="container">
+        <input type="text" class="form-control mb-3" placeholder="Serach..." data-search>
+        <div class="items">
+            <div data-filter-item data-filter-name="apple">Apple</div>
+            <div data-filter-item data-filter-name="google">Google</div>
+            <div data-filter-item data-filter-name="microsoft">Microsoft</div>
+            <div data-filter-item data-filter-name="hp">HP</div>
+            <div data-filter-item data-filter-name="dell">Dell</div>
+            <div data-filter-item data-filter-name="samsung">Samsung</div>
+        </div>
     </div>
 @endsection
+
+@push('scopedJs')
+    <script>
+        $('[data-search]').on('keyup', function() {
+            var searchVal = $(this).val();
+            var filterItems = $('[data-filter-item]');
+
+            if ( searchVal != '' ) {
+                filterItems.addClass('hidden');
+                $('[data-filter-item][data-filter-name*="' + searchVal.toLowerCase() + '"]').removeClass('hidden');
+            } else {
+                filterItems.removeClass('hidden');
+            }
+});
+    </script>
+@endpush

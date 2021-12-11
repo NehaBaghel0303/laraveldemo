@@ -1,0 +1,19 @@
+body{
+    padding:0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+i {
+    font-family: fontawesome !important;
+    }
+.profile-image img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: inline;
+}
+.sidebar{
+    height:100%;
+    
+}

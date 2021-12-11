@@ -1,0 +1,28 @@
+{
+  "name": "crudgen",
+  "version": "1.0.0",
+  "description": "[![Latest Version on Packagist](https://img.shields.io/packagist/v/devs-buddy/crudgen.svg?style=flat-square)](https://packagist.org/packages/devs-buddy/crudgen) [![Build Status](https://img.shields.io/travis/devs-buddy/crudgen/master.svg?style=flat-square)](https://travis-ci.org/devs-buddy/crudgen) [![Quality Score](https://img.shields.io/scrutinizer/g/devs-buddy/crudgen.svg?style=flat-square)](https://scrutinizer-ci.com/g/devs-buddy/crudgen) [![Total Downloads](https://img.shields.io/packagist/dt/devs-buddy/crudgen.svg?style=flat-square)](https://packagist.org/packages/devs-buddy/crudgen)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "colorspal": "^1.2.20"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "laravel-mix": "^5.0.9",
+    "resolve-url-loader": "^3.1.0",
+    "sass": "^1.29.0",
+    "sass-loader": "^8.0.2"
+  }
+}

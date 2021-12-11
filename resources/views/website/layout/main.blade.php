@@ -12,6 +12,7 @@
         @yield('content')
         @include('website.include.footer')
         @include('website.include.script')
+        
         @stack('scopedJs')
     </body>
 </html>

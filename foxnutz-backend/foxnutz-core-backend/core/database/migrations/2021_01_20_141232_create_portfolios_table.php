@@ -1,0 +1,35 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+
+class CreatePortfoliosTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('portfolios', function (Blueprint $table) {
+            $table->increments('id');
+            $table->timestamps();
+            $table->string('title')->nullable();
+            $table->text('short_description')->nullable();
+            $table->string('client')->nullable();
+            $table->date('date')->nullable();
+            $table->string('banner')->nullable();
+            });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('portfolios');
+    }
+}

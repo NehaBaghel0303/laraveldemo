@@ -24,7 +24,11 @@ class HomeController extends Controller
      */
     public function create()
     {
-        //
+        $location = UserLocation::whereUserId(auth()->id())->first();
+        $address = json_decode($location->address);
+        echo $address->{'type'};
+        return view('home.index',compact('address'));
+        
     }
 
     /**
@@ -33,10 +37,7 @@ class HomeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+   
 
     /**
      * Display the specified resource.
@@ -67,9 +68,36 @@ class HomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function store(Request $request)
     {
-        //
+
+        // return $request->all();
+         try{
+            // $location = UserLocation::whereUserId(auth()->id())->first();
+
+            
+            $data = [ 
+                'type'=>$request->type,
+                'address_line_one'=>$request->address_line_one,
+                'address_line_two'=>$request->address_line_two
+            ];
+    
+            if($location){
+                $location->update(['address'=> $data]);                
+            }
+            else{
+                UserLocation::create([
+                    'address'=> json_encode($data)
+                ]); 
+            }
+
+           
+            return redirect()->back()->with('success', 'Address updated succesfully!');
+            }catch (\Exception $e) {
+                $bug = $e->getMessage();
+                return redirect()->back()->with('error', $bug);
+    
+            }
     }
 
     /**
